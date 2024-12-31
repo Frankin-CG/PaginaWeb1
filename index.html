@@ -10,6 +10,7 @@
             background: linear-gradient(to bottom right, #e0f7fa, #fffde7); /* Celeste y amarillo claro */
             color: #333;
             padding: 20px;
+            overflow: hidden; /* Para que no se vean los corazones fuera del área visible */
         }
         .container {
             max-width: 600px;
@@ -58,6 +59,47 @@
         .btn-danger:hover {
             background-color: #ef5350; /* Rojo más intenso */
         }
+
+        /* Estilo para los corazones */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff4081; /* Rosado */
+            transform: rotate(-45deg);
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff4081;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-600px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -65,7 +107,7 @@
         <h1>Hola</h1>
         <h2>Me llamo Franklin, pero puedes llamarme <strong>Mi amor</strong></h2>
         <img src="https://i.pinimg.com/originals/ea/65/f4/ea65f4906b6957f97e71a2ba87763075.png" alt="">
-        <h3>Para la chica mas hermosa del mundo!!!</h3>
+        <h3>Para la chica más hermosa del mundo!!!</h3>
         <h4>¿Aceptas ser la musa de mis poemas y de mis burradas xd?</h4>
 
         <!-- Botones Sí y No -->
@@ -75,8 +117,27 @@
         </div>
     </div>
 
+    <!-- Corazones animados -->
+    <div id="hearts-container"></div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Generar corazones dinámicamente
+        const heartsContainer = document.getElementById('hearts-container');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 4 + 's';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000); // Eliminar corazón después de animación
+        }
+
+        setInterval(createHeart, 500); // Crear un corazón cada 500ms
+    </script>
 </body>
 </html>
