@@ -8,20 +8,20 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom right, #e0f7fa, #ffe082); /* Celeste y amarillo claro */
+            background: linear-gradient(to bottom right, #f8bbd0, #e1bee7); /* Rosa pálido y morado */
             font-family: 'Quicksand', sans-serif;
             padding: 20px;
             margin: 0;
         }
         h1 {
-            color: #ff6f61; /* Rosado vibrante */
+            color: #e91e63; /* Rosa oscuro */
             margin-bottom: 20px;
             font-size: 2.5em;
-            text-shadow: 1px 1px 3px rgba(255, 111, 97, 0.5);
+            text-shadow: 1px 1px 3px rgba(233, 30, 99, 0.5);
         }
         p {
             font-size: 1.2em;
-            color: #6d4c41; /* Marrón suave */
+            color: #880e4f; /* Morado oscuro */
             margin-bottom: 40px;
             line-height: 1.5;
             max-width: 600px;
@@ -43,38 +43,47 @@
         footer {
             margin-top: 40px;
             font-size: 0.9em;
-            color: #6d4c41; /* Marrón suave */
+            color: #880e4f; /* Morado oscuro */
+        }
+        .heart {
+            color: #e91e63; /* Rosa oscuro */
+            font-size: 2em;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="music/music.mp3" type="audio/mp3">    
+    </audio>
+    
 
     <div class="container text-center">
-       
-        <p>Te doy estas flores porque son tu favoritas y tan bellas como tú</p>
+        <h1 class="mb-4">Mi Regalo para Ti</h1>
+        <p>Te doy estas flores porque son tu favoritas y tan bellas como tú. <span class="heart">&hearts;</span></p>
 
         <div class="d-flex justify-content-center flex-wrap mb-4">
             <img src="imagenes/img1.jpg" alt="Flor amarilla 1" class="flower-img">
-            <img src="https://m.media-amazon.com/images/I/618AA5W8V6L._AC_UF350,350_QL80_.jpg" alt="Flor amarilla 2" class="flower-img">
+            <img src="imagenes/brujita.jpg" alt="brujita" class="flower-img">
             <img src="https://www.kukyflor.com/7902-large_default/ramo-premium-de-20-tulipanes-.jpg" alt="Flor amarilla 3" class="flower-img">
-            <img src="imagenes/img2.webp" alt="Flor amarilla 4" class="flower-img">
+            <img src="imagenes/brujita0.jpg" alt="brujita0" class="flower-img">
         </div>
         
-        
-        <img src="https://scontent.fayp1-1.fna.fbcdn.net/v/t39.30808-6/444483350_1811534969341641_620577393594872988_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=RwltRPfQQhoQ7kNvgHVecVK&_nc_oc=Adh-QlXtvsAa0ihxiHmuHRRk6BGXbMD7leCfiduNs_jCYoi24h_r7LkD6f1AiSjtvRPnAI04z0NZQWeztCQghFkM&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=AeCH9EsP1njhMlQHF6eKEmN&oh=00_AYASAhjlV_id-JBbhQwKXgrWX2rgMCWC_cAdYlFvodGEyg&oe=677905E1" alt="Flor amarilla 2" class="flower-img">
-        <p>para la bruja que me tiene hechizado con sus hermosos ojos</p>
+        <p>Para la bruja que me tiene hechizado con sus hermosos ojos. <span class="heart">&hearts;</span></p>
     </div>
 
     <footer class="text-center">
-        <p></p>
+        <p>Hecho con amor <span class="heart">&hearts;</span>, Franklin</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
-
-
-
-
